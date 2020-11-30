@@ -1,0 +1,6 @@
+{:name  "Test Setup"
+ :slots [{:name "Vanilla Townie" :alignment :alignment/town :abilities []}
+         {:name "Vanilla Townie" :alignment :alignment/town :abilities []}
+         {:name "Vanilla Townie" :alignment :alignment/town :abilities []}
+         {:name "Mafia Goon" :alignment :alignment/mafia :abilities []}
+         {:name "Mafia Goon" :alignment :alignment/mafia :abilities []}]}

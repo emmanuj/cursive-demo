@@ -1,0 +1,18 @@
+{:deps     {:aliases [:dev]}
+ :dev-http {8000 {:root      "resources/public"
+                  :handler app.client.route-handler/handler
+                  :dev-server/proxy "http://localhost:3000"}}
+ :builds   {:main {:target     :browser
+                   :output-dir "resources/public/js/main"
+                   :asset-path "/js/main"
+                   :modules    {:main {:init-fn app.client.core/main
+                                       :entries [app.client.core]}}
+                   :dev {:compiler-options {:output-feature-set :es-next}}
+                   :devtools {:http-root    "resources/public"
+                              :http-port    8888
+                              :reload-strategy :full
+                              :preloads     [devtools.preload
+                                             app.client.dev]
+                              :handler app.client.route-handler/handler
+                              :dev-server/proxy "http://localhost:3000"}}}
+ :nrepl    {:port 9000}}
